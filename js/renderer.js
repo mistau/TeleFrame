@@ -20,7 +20,7 @@ var currentImageIndex = images.length;
 var startTime, endTime, longpress, timeout, recordSwal, currentChatId, currentMessageId, currentTimeout;
 
 // configure sound notification sound
-if (config.playSoundOnRecieve != false) {
+if (config.playSoundOnReceive != false) {
   var audio = new Audio(__dirname + "/sound1.mp3");
 }
 
@@ -114,7 +114,7 @@ ipcRenderer.on("recordError", function(event, arg) {
 // handle new incoming image
 ipcRenderer.on("newImage", function(event, arg) {
   newImage(arg.sender, arg.type);
-  if (config.playSoundOnRecieve != false) {
+  if (config.playSoundOnReceive != false) {
     audio.play();
   }
 });

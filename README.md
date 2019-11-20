@@ -69,18 +69,18 @@ The following properties can be configured:
 
 | **Option**           | **Description**                                                                                                                                                      |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `botToken`           | The token of the Telegram Bot, which will recieve the images. How to create a bot and get the token is explained [here](https://core.telegram.org/bots#6-botfather). |
+| `botToken`           | The token of the Telegram Bot, which will receive the images. How to create a bot and get the token is explained [here](https://core.telegram.org/bots#6-botfather). |
 | `whitelistChats`     | Use this to only allow certain users to send photos to your TeleFrame. See hints below.                                                                              |
-| `playSoundOnRecieve` | Play a sound on recieving a message, set `false` to turn off.                                                                                                        |
+| `playSoundOnReceive` | Play a sound on receiving a message, set `false` to turn off.                                                                                                        |
 | `showVideos`         | When set to true, videos that are send to the bot are also shown.                                                                                                    |
-| `playVideoAudio`     | If recieved videos should be played with sound or not.                                                                                                               |
+| `playVideoAudio`     | If received videos should be played with sound or not.                                                                                                               |
 | `imageFolder`        | The folder where the images are stored.                                                                                                                              |
 | `fullscreen`         | When set to true, TeleFrame will run in fullscreen mode.                                                                                                             |
 | `fadeTime`           | The fading time between two images.                                                                                                                                  |
 | `interval`           | The time that an image is shown.                                                                                                                                     |
 | `imageCount`         | Defines how many different images are shown in the slideshow.                                                                                                        |
-| `newPhotoMessage`    | Message that is shown when the bot recieved a new image.                                                                                                             |
-| `newVideoMessage`    | Message that is shown when the bot recieved a new video.                                                                                                             |
+| `newPhotoMessage`    | Message that is shown when the bot received a new image.                                                                                                             |
+| `newVideoMessage`    | Message that is shown when the bot received a new video.                                                                                                             |
 | `showSender`         | When set to true, TeleFrame will show the name of the sender when the image is shown.                                                                                |
 | `showCaption`        | When set to true, TeleFrame will show the caption of the image when the image is shown.                                                                              |
 | `fullscreen`         | When set to true, TeleFrame will run in fullscreen mode.                                                                                                             |
@@ -128,7 +128,7 @@ Type `git status` to see your changes, if there are any, you can reset them with
 
 ## Bot only mode (no GUI)
 
-To run only the bot (without GUI), that saves the recieved images and videos into the folder specified in the config you need to run
+To run only the bot (without GUI), that saves the received images and videos into the folder specified in the config you need to run
 
 ```bash
 npm run botonly
