@@ -18,19 +18,18 @@ var container = document.getElementById("container");
 var isPaused = false;
 var currentImageIndex = images.length;
 var startTime, endTime, longpress, timeout, recordSwal, currentChatId, currentMessageId, currentTimeout;
-var playSoundOnReceive = false;
-
-// deal with both config variables to stay compatible
-if ( (config.hasOwnProperty(playSoundOnReceive) &&
-      config.playSoundOnReceive)
-   || (config.hasOwnProperty(playSoundOnRecieve) &&
-      config.playSoundOnRecieve )) {
-   playSoundOnReceive = true;
-}
+var bplaySoundOnReceive = false;
 
 // configure sound notification sound
-if(playSoundOnReceive) {
-  var audio = new Audio(__dirname + "/sound1.mp3");
+if (config.hasOwnProperty(playSoundOnReceive) &&
+    (config.playSoundOnReceive.length > 0)) {
+  bplaySoundOnReceive = true;
+  var audio = new Audio(__dirname + "/" + config.playSoundOnReceive);  
+} else if (config.hasOwnProperty(playSoundOnRecieve) &&
+	   (config.playSoundOnRecieve.length > 0)) {
+  // compatibilty
+  bplaySoundOnReceive = true;
+  var audio = new Audio(__dirname + "/" + config.playSoundOnRecieve);
 }
 
 // handle touch events for navigation and voice reply
@@ -123,7 +122,7 @@ ipcRenderer.on("recordError", function(event, arg) {
 // handle new incoming image
 ipcRenderer.on("newImage", function(event, arg) {
   newImage(arg.sender, arg.type);
-  if (config.playSoundOnReceive) {
+  if (bplaySoundOnReceive) {
     audio.play();
   }
 });
